@@ -45,7 +45,10 @@ jobs:
         run: Rscript -e 'bookdown::render_book("index.Rmd", quiet = TRUE)'
 
       - name: Build pdf
-        run: Rscript -e 'bookdown::render_book("index.Rmd", "bookdown::pdf_book", quiet = TRUE)'
+        run: |
+          tinytex::install_tinytex()
+          bookdown::render_book("index.Rmd", "bookdown::pdf_book", quiet = TRUE)
+        shell: Rscript {0}
 
       - name: Build epub
         run: Rscript -e 'bookdown::render_book("index.Rmd", "bookdown::epub_book", quiet = TRUE)'

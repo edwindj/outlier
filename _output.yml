@@ -6,7 +6,7 @@ bookdown::gitbook:
         <li><a href="./">A Minimal Book Example</a></li>
       after: |
         <li><a href="https://github.com/edwindj/outlier" target="blank">Published with bookdown</a></li>
-    edit: https://github.com/edwindj/outlier/edit/master/%s
+    edit: https://github.com/edwindj/outlier/edit/main/%s
     download: ["pdf", "epub"]
 bookdown::pdf_book:
   includes:

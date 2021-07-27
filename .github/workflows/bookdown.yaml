@@ -44,12 +44,9 @@ jobs:
       - name: Build site
         run: Rscript -e 'bookdown::render_book("index.Rmd", quiet = TRUE)'
 
-      - name: setup tinytex
-      - uses: r-lib/actions/setup-tinytex@v1
-      - run: tlmgr --version
-
       - name: Build pdf
         run: |
+          tinytex::install_tinytex()
           bookdown::render_book("index.Rmd", "bookdown::pdf_book", quiet = TRUE)
         shell: Rscript {0}
 
